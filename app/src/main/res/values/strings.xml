@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RimetHelper</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="open">开</string>
+    <string name="close">关</string>
+</resources>

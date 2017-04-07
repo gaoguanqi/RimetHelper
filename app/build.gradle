@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt' //ButterKnife 8.4
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "cn.eeok.rimethelper"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    compile "com.android.support:design:${rootProject.ext.supportLibVersion}"
+    compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'io.reactivex:rxjava:1.2.9'
+    compile 'io.reactivex:rxandroid:1.2.1'
+
+    //https://github.com/JZXiang/TimePickerDialog
+    compile 'com.jzxiang.pickerview:TimePickerDialog:1.0.1'
+
+    //https://github.com/pedant/sweet-alert-dialog
+    compile 'cn.pedant.sweetalert:library:1.3'
+}
