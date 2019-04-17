@@ -30,9 +30,6 @@ public class MyApplication extends Application {
 
     // 单例模式中获取唯一的MyApplication实例
     public static MyApplication getContext() {
-        if (null == mAppCtx) {
-            mAppCtx = new MyApplication();
-        }
         return mAppCtx;
     }
 
